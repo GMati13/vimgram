@@ -1,6 +1,7 @@
 from ui.widget.buffer import Buffer
 from urwid import Text, ListBox
 from app.component.dialogs.dialogs import dialogs
+from app.frame.body.chat import chat
 
 class Body(Buffer):
     def __init__(self):
@@ -24,6 +25,8 @@ class Body(Buffer):
             self.__maximized_dialogs = True
 
     def toggle_dialogs(self):
+        if chat.get_chat_id() is None:
+            return
         if self.__maximized_dialogs:
             self.minimize_dialogs()
         else:
@@ -35,7 +38,9 @@ class Body(Buffer):
             self.__minimized_messages = True;
             self.remove_column(0)
             self.contents.append((self.__dialogs, self.options('given', width_amount=35)))
+            self.append_column(chat, 'end')
         else:
+            self.remove_column(1)
             self.remove_column(0)
             self.append_column(self.__dialogs, 0)
 

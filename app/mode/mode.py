@@ -10,7 +10,8 @@ class ModeException(Exception):
 class Mode(Text):
     __modes = {
         'normal',
-        'command'
+        'command',
+        'insert'
     }
 
     __current_mode = start_mode

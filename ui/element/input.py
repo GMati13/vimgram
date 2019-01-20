@@ -1,10 +1,18 @@
 import urwid
 
 class Input(urwid.Edit):
-    def __init__(self):
-        super().__init__()
-        self.on_key_press = lambda: None
-        self.on_enter = lambda: None
+    def __init__(self, multiline=False):
+        super().__init__(multiline=multiline)
+        self.on_key_press = lambda key: None
+        self.on_enter = lambda key: None
+
+    def render(self, size, focus):
+        if focus:
+            self.on_focus()
+        return super().render(size, focus)
+    
+    def on_focus(self):
+        pass
 
     def keypress(self, size, key):
         _key = self.on_key_press(key)

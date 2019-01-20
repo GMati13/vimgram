@@ -7,10 +7,10 @@ black_s_tertiary_font = 'g35'
 
 dark_grey_primary_font = '#dff'
 dark_grey_primary_background = 'g20'
-dark_grey_p_tertiary_font = 'g85'
+dark_grey_p_tertiary_font = 'g40'
 dark_grey_secondary_font = '#8aa'
 dark_grey_secondary_background = 'g15'
-dark_grey_s_tertiary_font = 'g65'
+dark_grey_s_tertiary_font = 'g35'
 
 grey_primary_font = 'g90'
 grey_primary_background = 'g30'

@@ -1,8 +1,14 @@
 from urwid import ListBox
 
 class List(ListBox):
-    def __init__(self, **args):
-        super().__init__(args)
+    def __init__(self, widgets=[]):
+        self.__size = (1, 1)
+        super().__init__(widgets)
+
+    def render(self, size, focus):
+        canvas = super().render(size, focus)
+        self.__size = (canvas.rows(), canvas.cols())
+        return canvas
 
     def keypress(self, size, key):
         if key in ['j', 'k', 'J','K']:
@@ -21,6 +27,10 @@ class List(ListBox):
         if self.focus_position > 0:
             self.set_focus(self.focus_position - 1)
 
+    def scroll_end(self):
+        super().keypress(self.__size, 'end')
+        super().keypress(self.__size, 'end')
+
     def append_child(self, child, pos=0):
         if pos == 'end':
             self.body.append(child)
@@ -32,3 +42,6 @@ class List(ListBox):
             self.body.pop(child)
         else:
             self.body.remove(child)
+
+    def clear(self):
+        self.body.clear()

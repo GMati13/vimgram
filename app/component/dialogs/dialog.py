@@ -10,7 +10,7 @@ class Dialog(Buffer):
         self.__maximized_messages = maximized
         chat = dialog[tg.chat]
         self.__type = chat[tg.type]
-        self.__title = Text(str(self.__generate_title(chat)), wrap='clip')
+        self.__title = Text(str(f.get_name(chat)), wrap='clip')
         self.__id = chat[tg.id]
         message = dialog[tg.top_message]
         self.__message = Text(str(self.__generate_message(message)), wrap='clip')
@@ -28,13 +28,6 @@ class Dialog(Buffer):
         
         super().__init__(widgets if maximized else widgets[:1])
 
-    def __generate_title(self, chat):
-        if chat[tg.type] is tg.private:
-            title = chat[tg.first_name]
-            if chat[tg.last_name]:
-                title += ' ' + chat[tg.last_name]
-            return title
-        return chat[tg.title]
     
     def __generate_message(self, message):
         if message[tg.text] is None:

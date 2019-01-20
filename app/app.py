@@ -7,6 +7,8 @@ import app.mode.handler.command
 import app.mode.handler.insert
 import app.command.command
 from app.component.dialogs.dialogs import dialogs
+from app.frame.footer.status_line import status_line
+status_line.get_user_info()
 dialogs.load_dialogs()
 
 app = urwid.MainLoop(

@@ -32,3 +32,11 @@ def format_status(status):
     except Exception:
         result = result
     return result
+
+def get_name(data, is_chat=True):
+    if not is_chat or data[tg.type] is tg.private:
+        title = data[tg.first_name]
+        if data[tg.last_name]:
+            title += ' ' + data[tg.last_name]
+        return title
+    return data[tg.title]

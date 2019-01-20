@@ -5,6 +5,10 @@ class Black(AttrMap):
     def __init__(self, widget):
         super().__init__(widget, theme.black_secondary, theme.black_primary)
 
+class BlackTertiary(AttrMap):
+    def __init__(self, widget):
+        super().__init__(widget, theme.black_s_tertiary, theme.black_p_tertiary)
+
 class BlackInverse(AttrMap):
     def __init__(self, widget):
         super().__init__(widget, theme.black_primary, theme.black_secondary)
@@ -21,6 +25,10 @@ class DarkGrey(AttrMap):
     def __init__(self, widget):
         super().__init__(widget, theme.dark_grey_secondary, theme.dark_grey_primary)
 
+class DarkGreyTertiary(AttrMap):
+    def __init__(self, widget):
+        super().__init__(widget, theme.dark_grey_s_tertiary, theme.dark_grey_p_tertiary)
+
 class DarkGreyInverse(AttrMap):
     def __init__(self, widget):
         super().__init__(widget, theme.dark_grey_primary, theme.dark_grey_secondary)
@@ -36,6 +44,10 @@ class DarkGreyStaticInverse(AttrMap):
 class Grey(AttrMap):
     def __init__(self, widget):
         super().__init__(widget, theme.grey_secondary, theme.grey_primary)
+
+class GreyTertiary(AttrMap):
+    def __init__(self, widget):
+        super().__init__(widget, theme.grey_s_tertiary, theme.grey_p_tertiary)
 
 class GreyInverse(AttrMap):
     def __init__(self, widget):

@@ -2,7 +2,7 @@ from urwid import Text, Padding
 from ui.widget.buffer import Buffer
 import const.tg as tg
 import app.formatter as f
-from ui.decorator.decorator import Black, DarkGreyStatic
+from ui.decorator.decorator import Black, DarkGreyStatic, BlackTertiary
 from app.theme.theme import target_theme as theme
 
 class Dialog(Buffer):
@@ -13,11 +13,11 @@ class Dialog(Buffer):
         self.__id = chat[tg.id]
         message = dialog[tg.top_message]
         self.__message = DarkGreyStatic(Padding(Text(str(self.__generate_message(message)), wrap='clip'), right=1, left=1))
-        self.__date = Text(str(f.formate_date(message[tg.date])), align='right', wrap='clip')
+        self.__date = BlackTertiary(Text(str(f.formate_date(message[tg.date])), align='right', wrap='clip'))
         super().__init__([
             (35, Black(Buffer([
                 (24, Padding(self.__title, left=1)),
-                (10, Padding(self.__date, right=1))
+                (10, Padding(self.__date, right=0))
             ]))),
             (self.__message)
         ])
@@ -33,10 +33,12 @@ class Dialog(Buffer):
     def __generate_message(self, message):
         if message[tg.text] is None:
             return tg.media_file
-        return message[tg.text].replace('\n', ' ')
+        return message[tg.text].split('\n')[0]
 
     def mark_dialog(self):
         self.__message.set_attr_map({ None: theme.black_secondary })
+        self.__date.set_attr_map({ None: theme.black_p_tertiary })
     
     def unmark_dialog(self):
         self.__message.set_attr_map({ None: theme.dark_grey_secondary })
+        self.__date.set_attr_map({ None: theme.black_s_tertiary })

@@ -1,8 +1,8 @@
 import urwid
 
 class Buffer(urwid.Columns):
-    def __init__(self, columns=[]):
-        super().__init__(columns, dividechars=1)
+    def __init__(self, columns=[], dividechars=0):
+        super().__init__(columns, dividechars)
 
     def append_column(self, column, pos=0):
         if pos == 'end':

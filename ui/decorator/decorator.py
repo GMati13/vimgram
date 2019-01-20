@@ -3,19 +3,19 @@ from app.theme.theme import target_theme as theme
 
 class Black(AttrMap):
     def __init__(self, widget):
-        super().__init__(widget, theme.secondary, theme.primary)
+        super().__init__(widget, theme.black_secondary, theme.black_primary)
 
 class BlackInverse(AttrMap):
     def __init__(self, widget):
-        super().__init__(widget, theme.primary, theme.secondary)
+        super().__init__(widget, theme.black_primary, theme.black_secondary)
 
 class BlackStatic(AttrMap):
     def __init__(self, widget):
-        super().__init__(widget, theme.secondary)
+        super().__init__(widget, theme.black_secondary)
 
 class BlackStaticInverse(AttrMap):
     def __init__(self, widget):
-        super().__init__(widget, theme.primary)
+        super().__init__(widget, theme.black_primary)
 
 class DarkGrey(AttrMap):
     def __init__(self, widget):

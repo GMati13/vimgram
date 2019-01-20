@@ -5,6 +5,8 @@ from app.theme.theme import target_theme as theme
 from app.mode.handler.normal import on_key_press
 import app.mode.handler.command
 import app.command.command
+from app.component.dialogs.dialogs import dialogs
+dialogs.load_dialogs()
 
 app = urwid.MainLoop(
     frame,

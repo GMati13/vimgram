@@ -18,3 +18,5 @@ grey_p_tertiary_font = 'g90'
 grey_secondary_font = 'g70'
 grey_secondary_background = 'g25'
 grey_s_tertiary_font = 'g70'
+
+message_green = '#8f8'

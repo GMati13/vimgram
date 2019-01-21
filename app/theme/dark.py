@@ -36,6 +36,9 @@ _grey_secondary = (grey_secondary, '', '', '', color.grey_secondary_font, color.
 grey_s_tertiary = 'grey secondary tertiary'
 _grey_s_tertiary = (grey_s_tertiary, '', '', '', color.grey_s_tertiary_font, color.grey_secondary_background)
 
+message_green = 'message green'
+_message_green = (message_green, '', '', '', color.message_green, color.dark_grey_secondary_background)
+
 palette = (
     _black_primary,
     _black_p_tertiary,
@@ -48,5 +51,6 @@ palette = (
     _grey_primary,
     _grey_p_tertiary,
     _grey_secondary,
-    _grey_s_tertiary
+    _grey_s_tertiary,
+    _message_green
 )

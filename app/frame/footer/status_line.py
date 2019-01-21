@@ -9,6 +9,7 @@ class StatusLine(InfoLine):
     def __init__(self):
         self.mode_status = (3, mode)
         self.name = Text('loading...')
+        self.user = None
         super().__init__([
             self.mode_status,
             self.name
@@ -17,5 +18,10 @@ class StatusLine(InfoLine):
     def get_user_info(self):
         self.user = tg.get_me()
         self.name.set_text(f.get_name(self.user, is_chat=False))
+
+    def get_user_id(self):
+        if self.user is None:
+            return None
+        return self.user[t.id]
 
 status_line = StatusLine()

@@ -12,5 +12,5 @@ class VimgramClient(Client):
         self.send(api.functions.auth.LogOut())
         os.remove(SESSION_FILE) if os.path.exists(SESSION_FILE) else None
 
-client = VimgramClient(SESSION_NAME, api_id=APP_ID, api_hash=APP_HASH, workdir=APP_DIR)
+client = VimgramClient(SESSION_NAME, api_id='0', api_hash='0', workdir=APP_DIR)
 client.start()

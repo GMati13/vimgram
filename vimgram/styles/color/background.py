@@ -1,0 +1,4 @@
+MAIN = 'g10'
+DIVIDER = 'g15'
+STATUS_LINE = 'g23'
+INFO_LINE = 'g23'

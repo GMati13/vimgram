@@ -1,2 +1,4 @@
+from vimgram.ui import app
+
 def main():
-    print('hello world')
+    app.run()

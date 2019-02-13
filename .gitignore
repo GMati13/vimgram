@@ -1,2 +1,4 @@
-
+build
+dist
+vimgram.egg-info
 __pycache__
